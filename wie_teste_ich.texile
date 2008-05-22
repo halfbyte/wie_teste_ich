@@ -1,0 +1,47 @@
+h1. Wie teste ich...
+
+h2. durchsuchte projekte
+
+* elab_community
+* familylounge-platform
+* mittelstandsportal
+
+h2. model specs/tests
+
+* ferret (wie testet man, welche felder wie im index landen etc.)
+* attr_protected
+* acts_as_taggable?
+* localized_names (simple_localization)
+* Geocoding (was wegmocken? GeoKit? )
+* Wegmocken von komplexen API's (Amazon/Flickr)
+
+h3. Erweiterungen (was ist sinnvoll?)
+
+* should have_many/have_one/belong_to -> matcher in unseren rspecextensions -> mittelstandsportal -> statt respond_to?
+  * nachteil: man testet auf implementationsbasis.
+* should validate mit validation_introspection
+
+h2. controller tests
+
+* achtung: alles wegmocken ist GEFÄHRLICH ohne weitere integrations/funktionale Tests -> niemand sagt einem, ob die modelle und die mocks der modelle wirklich identisch sind. RSPEC-lösung: stories. 
+  * 
+
+h2. sonstiges
+
+* mailertests mit vergleich auf "fixture" sind eigentlich rotz
+* Dinge in lib/ -> für module sollte es eigene Specs geben
+
+h2. rspec vs. trad. rails tests
+
+* Unterschiedl. Testphilosophien
+* Rails -> von innen nach aussen -> Fat Models, Skinny Controller -> fat unit tests. skinny functional tests
+* RSpec -> von aussen nach innen -> mocks als Modeln für die schicht darunter -> integration / funktionale tests müssen explizit gebaut werden
+
+h2. das fixtures-dilemma
+
+* statische fixtures werden irgendwann unhandlich
+* änderungen an models ziehen uU. sehr viele fixtures-änderungen nach sich
+* situation in rails 2 etwas besser geworden
+* dynamische fixtures aka factory aka exemplars aka whatnot
+  * viel arbeit, langsamer, besser zu pflegen
+* 
