@@ -1,0 +1,1 @@
+- nichts Plugins, Gems oder gar Rails selber
