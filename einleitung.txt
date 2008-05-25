@@ -1,0 +1,1 @@
+- philosophische Unterschiede zwischen TDD und BDD

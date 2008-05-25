@@ -1,0 +1,1 @@
+- mock und stub, um externe System und lang laufende (oder forked) Prozesse zu vermeiden

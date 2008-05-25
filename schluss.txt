@@ -1,0 +1,2 @@
+- Hinweis auf Selenium
+- Hinweis auf JavaScript-Testing
