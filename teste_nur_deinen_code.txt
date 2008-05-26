@@ -1,0 +1,5 @@
+* Keinen Framework-Code Testen
+  * Assoziationen
+    * reflect_on
+  * Validations
+    * validation_reflections
