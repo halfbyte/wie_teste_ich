@@ -1,0 +1,39 @@
+Story: Company Dashboard
+
+  As an logged in company
+  I want to get to my dashboard
+  So I can access all subpages of my dashboard
+  
+  Scenario: Company gets the dashboard-site
+    
+    Given the user is logged in as company
+    And a company exists
+    When he gets the dashboard
+    Then the response should be success
+    And the company dashboard page should be shown
+    And the shown page contains an edit-link
+    And the shown page contains an profile-link
+    And the shown page contains an watchlist-link
+    And the shown page doesn't contain an dashboard-link
+    
+  Scenario: Company gets the profile-site
+
+    Given the user is logged in as company
+    And a company exists
+    When he gets the profile-site
+    Then the response should be success
+    And the company profile page should be shown
+    And the shown page contains an dashboard-link
+    And the shown page contains an watchlist-link
+    And the shown page doesn't contain an profile-link
+    
+  Scenario: Company gets the watchlist-site
+
+    Given the user is logged in as company
+    And a company exists
+    When he gets the watchlist-site
+    Then the response should be success
+    And the company watchlist-page should be shown
+    And the shown page contains an dashboard-link
+    And the shown page contains an profile-link
+    And the shown page doesn't contain an watchlist-link

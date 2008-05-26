@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/repos/mittelstandsportal/!svn/ver/132/platform/trunk/mittelstandsportal-platform/stories/stories_plain_text
+END
+bookmark_story
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/repos/mittelstandsportal/!svn/ver/86/platform/trunk/mittelstandsportal-platform/stories/stories_plain_text/bookmark_story
+END
+homepage_story
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/repos/mittelstandsportal/!svn/ver/77/platform/trunk/mittelstandsportal-platform/stories/stories_plain_text/homepage_story
+END
+company_dashboard_is_shown
+K 25
+svn:wc:ra_dav:version-url
+V 135
+/repos/mittelstandsportal/!svn/ver/112/platform/trunk/mittelstandsportal-platform/stories/stories_plain_text/company_dashboard_is_shown
+END
+admin_story
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/repos/mittelstandsportal/!svn/ver/86/platform/trunk/mittelstandsportal-platform/stories/stories_plain_text/admin_story
+END
+company_invitation_story
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/repos/mittelstandsportal/!svn/ver/112/platform/trunk/mittelstandsportal-platform/stories/stories_plain_text/company_invitation_story
+END
+applicant_dashboard_is_shown
+K 25
+svn:wc:ra_dav:version-url
+V 137
+/repos/mittelstandsportal/!svn/ver/132/platform/trunk/mittelstandsportal-platform/stories/stories_plain_text/applicant_dashboard_is_shown
+END

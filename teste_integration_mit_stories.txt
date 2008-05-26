@@ -1,0 +1,23 @@
+* Zweck
+  * Akzeptanz-test: Stories sind ein ersatz für auf Papier aufgeschriebene Userstories
+  * Integrationstest: Isolierte Controller- und Modeltests ergeben eine Lücke in der Integration, die leicht zu problemen in der laufenden Anwendung führt
+* Unterschiede zu Unit-Test
+  * Stories laufen erst am Ende der Iteration komplett
+  * Stories werden idealerweise vom Kunden oder im Dialog mit dem Kunden erfasst (Ist das praktikabel?)
+* Anwendung
+  * Klartext-Stories, die Kontext, Bedingungen und erwartete Ergebnisse abbilden
+  * Glue-Code, der Texte interpretiert und in assertions (examples) übersetzt
+
++ Vorteile
+  * Integrationstest
+  * Wenn vernünftig implementiert, sehr transparent für den Kunden
+- Nachteile
+  * Vollständige Codeabdeckung unglaublich aufwändig (und unnötig!)
+  * Gewissen Abstraktionsvermögen beim Kunden nötig
+
+* Code
+  @stories/stories_plain_text/bookmark_story
+  @stories/bookmark_story.rb
+
+
+

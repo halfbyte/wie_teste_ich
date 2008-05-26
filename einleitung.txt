@@ -1,1 +1,3 @@
 - philosophische Unterschiede zwischen TDD und BDD
+- von innen nach aussen vs. von aussen nach innen
+- Tests als "exploratives entdecken von Schnittstellen" (Bild mit konzentrischen Kreisen)

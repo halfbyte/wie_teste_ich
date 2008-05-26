@@ -1,0 +1,15 @@
+Story: View Homepage
+
+	As a visitor
+	I want to access the homepage
+	So that I can get an overview of the project
+
+	Scenario: Vistor visits the homepage
+		
+		Given 10 new companies
+		
+		When I request /
+		
+		Then I want to get a successful response
+		And I want to see the latest companies
+		And the latest 8 companies should be shown

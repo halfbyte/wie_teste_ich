@@ -1,0 +1,37 @@
+Story: Applicant Dashboard
+
+  As an logged in applicant
+  I want to get to my dashboard
+  So I can access all subpages of my dashboard
+  
+  Scenario: Applicant gets the dashboard-site
+    
+    Given the user is logged in as applicant
+    And companies and bookmarks are assigned
+    When he gets the dashboard
+    Then the response should be success
+    And the applicant dashboard page should be shown
+    And the shown page contains an profile-link
+    And the shown page contains an watchlist-link
+    And the shown page doesn't contain an dashboard-link
+    
+  Scenario: Applicant gets the profile-site
+
+    Given the user is logged in as applicant
+    And companies and bookmarks are assigned
+    When he gets the profile-site
+    Then the response should be success
+    And the applicant profile page should be shown
+    And the shown page contains an dashboard-link
+    And the shown page contains an watchlist-link
+    And the shown page doesn't contain an profile-link
+
+  Scenario: Applicant gets the watchlist-site
+
+    Given the user is logged in as applicant
+    When he gets the watchlist-site
+    Then the response should be success
+    And the applicant watchlist-page should be shown
+    And the shown page contains an dashboard-link
+    And the shown page contains an profile-link
+    And the shown page doesn't contain an watchlist-link

@@ -1,0 +1,47 @@
+Story: Creation, Deletion and Show of Bookmarks
+
+  As a user
+  I want to create, destroy or show my bookmarks
+  So I have total control of my bookmarks
+  
+  Scenario: Logged in User accessing the bookmarks page
+    
+    Given the user is logged in
+    When he tries to view his bookmarks
+    Then the response should be successful
+
+  Scenario: Logged in User adds a company to his bookmarks
+  
+    Given the user is logged in
+    And the company exists
+    When he tries to add a company to his bookmarks
+    Then the company should be added to his bookmarks
+    And the user should be redirected to the bookmarks page
+    And the status message should be 'Bookmark wurde erfolgreich erstellt.'
+  
+  Scenario: Logged in User removes a bookmark from his watchlist
+    
+    Given the user is logged in
+    And the company exists
+    And the watchlist contains at least 1 bookmark
+    When he tries to remove a bookmark from his watchlist
+    Then the user should be redirected to the bookmarks page
+    And the bookmark should be removed from the users watchlist
+    And the status message should be 'Bookmark wurde entfernt.'
+  
+  Scenario: Logged in User tries to add a company to his bookmarks twice
+    
+    Given the user is logged in
+    And the company exists
+    And the watchlist contains the company already
+    When he tries to add a company to his bookmarks
+    Then the user should be redirected to the company page
+    And the bookmark should not be added to the watchlist
+    And the status message should be 'Das Bookmark befindet sich schon in Ihrer Watchlist.'
+  
+  Scenario: Not logged in User accessing the bookmarks page
+  
+    Given the user is not logged in
+    When he tries to view his bookmarks
+    Then the response should be redirect
+    
