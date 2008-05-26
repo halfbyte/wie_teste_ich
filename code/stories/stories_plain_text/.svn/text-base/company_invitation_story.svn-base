@@ -1,0 +1,22 @@
+Story: Company clicks the invitation link in the email
+
+  As an invited company
+  I want to to register
+  So I can participate at SZ-portal
+  
+  Scenario: Company clicks onto the register link in the email
+    
+    Given the user is not logged in
+    And a company exists
+    When he clicks onto the invitation link in the email
+    Then the response should be success
+    And the company show page should be shown
+    And the shown page contains a register company link
+    
+  Scenario: Company is currently at the welcome page and clicks the register link
+  
+    Given the user is not logged in
+    When the user clicks the register link
+    Then the user should be forwarded to the company register page
+    And the response should be success
+    And the company register page should be shown

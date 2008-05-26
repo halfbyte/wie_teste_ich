@@ -1,0 +1,17 @@
+Story: Admin invites a company
+
+  As a admin
+  I want to invite a company
+  So the company may register
+  
+  Scenario: Admin invites company
+    
+    Given the user is logged in
+    And a company exists
+    And the user is a admin
+    And the user is on companies overview
+    When he clicks onto the invite company link
+    Then the response should be redirect
+    And the email is sent
+    And the flag invited_at is set to the current date
+    And the flash should be set
