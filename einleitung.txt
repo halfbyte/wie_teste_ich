@@ -1,3 +1,10 @@
+Es geht um
+- Best Practices bzgl. Testen von Rails-Anwendungen (mit RSpec)
+- außerdem wollen wir ein paar Szenarien vorstellen, bei denen man zunächst nicht weiß, wie man sie
+  eigentlich testen soll und kann
+
+Sonst
 - philosophische Unterschiede zwischen TDD und BDD
 - von innen nach aussen vs. von aussen nach innen
-- Tests als "exploratives entdecken von Schnittstellen" (Bild mit konzentrischen Kreisen)
+  -> was ist damit gemeint? :-) [thorsten, 27.05.2008]
+- Tests als "exploratives Entdecken von Schnittstellen" (Bild mit konzentrischen Kreisen)
