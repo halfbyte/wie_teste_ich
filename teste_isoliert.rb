@@ -8,8 +8,8 @@
 #   sich die Schnittstelle bzw. das Verhalten nicht geändert haben
 #   -> Mittelmaß finden!
 
-# an dieser Stelle kann man sehr einen Controller-Tests zeigen und dabei 
-# demonstrieren, wie man die Models und die Zugriffe auf die Datenbank wegmockt
+# TODO: an dieser Stelle kann man sehr einen Controller-Tests zeigen und dabei 
+# demonstrieren, wie man die Models und die Zugriffe auf die Datenbank wegmockt [thorsten, 27.05.2008]
 
-# ausserdem kann man einen Model-Test zeigen, wie z.B. die Youtube-API weggemockt
-# wird (Validierung, ob eine Video-ID auch existiert)
+# TODO: ausserdem kann man einen Model-Test zeigen, wie z.B. die Youtube-API weggemockt
+# wird (Validierung, ob eine Video-ID auch existiert) [thorsten, 27.05.2008]

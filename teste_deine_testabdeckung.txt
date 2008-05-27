@@ -1,0 +1,4 @@
+mit Hilfe von RCov
+
+Warum?
+- um zu wissen, wie gut man ist

@@ -1,3 +1,4 @@
 * Viele methoden/features eines Modells lassen sich auch ohne save testen, das erhöht die geschwindigkeit
 * should be_valid ist dein freund
-* 
+
+TODO: Beispiel [thorsten, 27.05.2008]
