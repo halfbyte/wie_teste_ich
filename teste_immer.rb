@@ -12,3 +12,12 @@
 # - ich weiss nicht, wie ich testen soll
 #   -> dafür sind wir ja jetzt hier ;-)
 
+# wie teste ich Caching?
+# wie teste ich Performance?
+# wie teste ich das Front-End?
+# wie teste ich meine Migrationen?
+# wie teste ich meine Internationalisierung?
+# wie teste ich Transaktionen?
+# wie teste ich XML-Output?
+# wie teste ich RJS?
+# wie teste ich acts_as-Module?
