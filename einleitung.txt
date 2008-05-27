@@ -8,3 +8,7 @@ Sonst
 - von innen nach aussen vs. von aussen nach innen
   -> was ist damit gemeint? :-) [thorsten, 27.05.2008]
 - Tests als "exploratives Entdecken von Schnittstellen" (Bild mit konzentrischen Kreisen)
+
+Wie gehen wir vor?
+- wir stellen eine Reihe an 'Regeln' (Best Practices) vor, die uns beim Testen helfen (als Richtlinie, 
+  nicht dogmatisch!)
