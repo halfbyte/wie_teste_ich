@@ -12,6 +12,10 @@
 # - ich weiss nicht, wie ich testen soll
 #   -> dafür sind wir ja jetzt hier ;-)
 
+# vielleicht sollten wir diese Sonderfälle an späterer Stelle erläutern; ich denke, noch ist es zu früh
+# welche Fälle kann man an dieser Stelle schon zeigen?
+# vielleicht zeitkritische Daten und Transaktionen
+
 # TODO: folgende Szenarien aufzeigen [thorsten, 27.05.2008]
 # wie teste ich Transaktionen?
 # wie teste ich zeitkritische Daten?

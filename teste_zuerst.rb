@@ -12,5 +12,30 @@
 #   -> man kann seine Tests ja später optimieren
 #   -> Erfahrung hilft
 
-# TODO: Wollen wir ein Beispiel für TDD/BDD aufführen? [thorsten, 27.05.2008]
-#       wäre vielleicht hilfreich, um die Notation einzuführen...
+# zuerst beschreibt man, wie der Benutzer sich verhalten soll
+describe "A user's display name" do
+  it "should equal his/her login name if no other is available" do
+  end
+  it "should equal his/her full name if available" do 
+  end
+end
+
+# dann füllt man das Ganze mit Leben
+describe "A user's display name" do
+  it "should equal his/her login name if no other is available" do
+    user = User.new(:login => 'dude')
+    user.display_name.should eql('dude')
+  end
+  it "should equal his/her full name if available" do 
+    user = User.new(:login => 'dude', :name => 'Thorsten Böttger')
+    user.display_name.should eql('Thorsten Böttger')
+  end
+end
+
+# und dann sieht man zu, dass der Benutzer das auch tut
+# user.rb
+class User < ActiveRecord::Base
+  def display_name
+    name.blank? ? login : name
+  end
+end

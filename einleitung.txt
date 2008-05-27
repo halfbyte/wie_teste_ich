@@ -5,7 +5,7 @@ Es geht um
 
 Sonst
 - von innen nach aussen vs. von aussen nach innen
-  -> was ist damit gemeint? :-) [thorsten, 27.05.2008]
+  -> was ist damit gemeint? :-) TODO [thorsten, 27.05.2008]
 - Tests als "exploratives Entdecken von Schnittstellen" (Bild mit konzentrischen Kreisen)
 
 Wie gehen wir vor?
@@ -22,10 +22,12 @@ Reihenfolge
 - schreibe schnelle Tests
 - bleibe orthogonal
 - teste isoliert (Unit-Tests)
+
 - teste die Mailer mit regulären Ausdrücken
 - teste Modelle ohne Datenbank-Zugriff (oder doch mit?)
 - teste die Integration mit Hilfe von Stories
 - vermeide Fixtures
+- mocke nicht zuviel
 - wiederhole nicht deinen Testcode
 - teste alles vor jedem Commit
 - teste automatisiert

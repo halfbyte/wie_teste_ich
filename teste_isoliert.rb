@@ -1,5 +1,6 @@
 # Warum?
-# - mock und stub, um externe System und lang laufende (oder forked) Prozesse zu vermeiden
+# - um den Fehler nur in der Unit zu suchen und zu finden
+# - mock und stub, um externe Systeme und lang laufende (oder forked) Prozesse zu vermeiden
 
 # Probleme
 # - ich laufe Gefahr, zu sehr die Implementierung zu testen
@@ -8,8 +9,55 @@
 #   sich die Schnittstelle bzw. das Verhalten nicht geändert haben
 #   -> Mittelmaß finden!
 
-# TODO: an dieser Stelle kann man sehr einen Controller-Tests zeigen und dabei 
-# demonstrieren, wie man die Models und die Zugriffe auf die Datenbank wegmockt [thorsten, 27.05.2008]
+# schauen wir uns mal diesen Controller-Code an
+class UsersController < ApplicationController
+  def index
+    @users = User.find_active
+  end
+end
 
-# TODO: ausserdem kann man einen Model-Test zeigen, wie z.B. die Youtube-API weggemockt
-# wird (Validierung, ob eine Video-ID auch existiert) [thorsten, 27.05.2008]
+# Test dazu
+describe UsersController, "GET request on /users" do
+  it "should deliver active users" do
+    User.should_receive(:find_active).and_return(['user1','user2'])
+    get index
+    assigns(:users).should eql(['user1','user2'])
+  end
+end
+# Ergebnis: kein Datenbankzugriff, nur Test des Controller-Codes
+
+
+# Model-Beispiel: Youtube-Zugriff weggemockt
+class Video < ActiveRecord::Base
+  # hat eine youtube_video_id
+  
+  def validate
+    response = Net::HTTP.start('youtube.com') { |http| http.head("/v/#{self.youtube_video_id}") }
+    unless response.is_a?(Net::HTTPOK)
+      errors.add(:youtube_video_id, "no valid Youtube Video ID")
+    end
+  end
+end
+
+# Test
+describe Video, "validations" do
+  before(:each) do
+    @video = Video.new(:youtube_video_id => 'iY6VroKoB8E')
+    http = mock('http')
+    Net::HTTP.stub!(:start).and_yield(http)
+    @response = mock('response')
+    http.stub!(:head).and_return(@response)
+  end
+  it "should succeed with correct youtube video id" do
+    @response.should_receive(:is_a?).with(Net::HTTPOK).and_return(true)
+    @video.should be_valid
+  end
+  it "should fail with incorrect youtube video id" do
+    @response.should_receive(:is_a?).with(Net::HTTPOK).and_return(false)
+    @video.should_not be_valid
+  end
+end
+# Ergebnis: sehr viel gemockt, und sehr dicht an der Implementierung
+
+
+# ganz wild
