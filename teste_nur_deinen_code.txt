@@ -1,5 +1,12 @@
 * Keinen Framework-Code Testen
   * Assoziationen
     * reflect_on
+		* respond_to reicht nicht aus, weil has_one/belongs_to nicht trennbar ist über den assoc-proxy
+		-> screencast gucken
+		-> Plugin extrahieren
+
   * Validations
     * validation_reflections
+    -> Plugin extrahieren
+
+
