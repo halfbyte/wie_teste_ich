@@ -1,4 +1,4 @@
-# - eine Assertion pro Test?
+# - eine Assertion pro Test? DOGMA!!!!
 
 # Warum?
 # - lesbarer

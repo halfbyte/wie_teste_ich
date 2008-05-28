@@ -12,9 +12,10 @@
 #   -> man kann seine Tests ja später optimieren
 #   -> Erfahrung hilft
 
+# Beispiel (soll auch die Notation einführen)
 # zuerst beschreibt man, wie der Benutzer sich verhalten soll
 describe "A user's display name" do
-  it "should equal his/her login name if no other is available" do
+  it "should equal his/her login if no other name is available" do
   end
   it "should equal his/her full name if available" do 
   end

@@ -6,8 +6,8 @@
 # - ich laufe Gefahr zu wenig testen
 #   -> das Problem hat man eigentlich immer beim Testen (Erfahrung hilft!)
 
+# --------------------------------------------------------------------------------------------------------
 # Beispiel: Mailertest
-
 # user_mailer_spec.rb
 describe UserMailer, "signup notification" do
   before do

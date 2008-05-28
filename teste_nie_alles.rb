@@ -4,8 +4,7 @@
 # Warum?
 # - weil man sonst nicht mehr implementiert, sondern nur noch Tests schreibt; es kostet 
 #   einfach zu viel Zeit!
-# - nicht mehr tuen als nötig
-# - gut genug, pragmatisch
+# - nicht mehr tuen als nötig, gut genug, pragmatisch
 
 # Probleme
 # - wie finde ich das? wann ist es gut genug?

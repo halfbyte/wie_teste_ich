@@ -31,8 +31,9 @@ describe "Finding active users" do
     User.find_active(:order => 'name ASC').should eql([@jan, @thorsten])
   end
 end
+# -> wenn ich jetzt eine weitere Bedingung für Aktivität hinzufüge und das mittesten
+#    möchte, dann muss ich gleich drei Tests anpassen!
 
-# jetzt fügen wir der Aktivität noch eine Bedingung hinzu
 class User < ActiveRecord::Base
   def self.find_active(options={})
     find_options = {:conditions => 'deleted_at IS NULL AND points > 0'}

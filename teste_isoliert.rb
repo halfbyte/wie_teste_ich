@@ -9,6 +9,7 @@
 #   sich die Schnittstelle bzw. das Verhalten nicht geändert haben
 #   -> Mittelmaß finden!
 
+# --------------------------------------------------------------------------------------------------------
 # schauen wir uns mal diesen Controller-Code an
 class UsersController < ApplicationController
   def index
@@ -27,6 +28,7 @@ end
 # Ergebnis: kein Datenbankzugriff, nur Test des Controller-Codes
 
 
+# --------------------------------------------------------------------------------------------------------
 # Model-Beispiel: Youtube-Zugriff weggemockt
 class Video < ActiveRecord::Base
   # hat eine youtube_video_id
@@ -59,5 +61,32 @@ describe Video, "validations" do
 end
 # Ergebnis: sehr viel gemockt, und sehr dicht an der Implementierung
 
-
+# --------------------------------------------------------------------------------------------------------
 # ganz wild
+class Project < ActiveRecord::Base
+  def accessible_by?(user)
+    owner_id == user.id
+  end
+end
+
+class ProjectsController
+  before_filter :login_required
+  def show
+    @project = Project.find(params[:id])
+    redirect_to projects_path and return unless @project.accessible_by?(current_user)
+  end
+end
+
+describe "GET request on /projects/1" do
+  before do
+    @project = Project.create
+  end
+  it "should redirect if user may not access the project" do
+    @project.stub!(:accessible_by?).and_return(false)
+    get :show, :id => @project.id
+    response.should redirect_to(projects_path)
+  end
+end
+
+# was passiert nun, wenn ich die Methode accessible_by? umbenenne?
+

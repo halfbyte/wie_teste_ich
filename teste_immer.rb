@@ -10,11 +10,9 @@
 #   -> das sieht auf den ersten Blick so aus, ja, ist aber nicht so; die späteren Vorteile
 #      wiegen das mehr als auf
 # - ich weiss nicht, wie ich testen soll
-#   -> dafür sind wir ja jetzt hier ;-)
 
 # vielleicht sollten wir diese Sonderfälle an späterer Stelle erläutern; ich denke, noch ist es zu früh
 # welche Fälle kann man an dieser Stelle schon zeigen?
-# vielleicht zeitkritische Daten und Transaktionen
 
 # --------------------------------------------------------------------------------------------------------
 # Transaktionen
@@ -50,9 +48,7 @@ end
 # folgende eventuell
 # wie teste ich Performance?
 # wie teste ich das Front-End?
-# wie teste ich meine Migrationen?
 # wie teste ich meine Internationalisierung?
-# wie teste ich RJS?
 # wie teste ich acts_as-Module?
 
 # --------------------------------------------------------------------------------------------------------
