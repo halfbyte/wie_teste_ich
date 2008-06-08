@@ -15,20 +15,22 @@ end
 # unorthogonale Tests
 describe "Finding active users" do
   before do
-    @jan      = User.create(:login => 'krutisch', :name => 'Jan')
-    @thorsten = User.create(:login => 'boettger', :name => 'Thorsten')
-    @dude     = User.create(:login => 'dude',     :name => 'dude', :deleted_at => Time.now)
+    @jan      = User.create(:name => 'Jan')
+    @thorsten = User.create(:name => 'Thorsten')
+    @urs      = User.create(:name => 'Urs')
+    @deleted  = User.create(:name => 'Deleted', :deleted_at => Time.now)
   end
   it "should deliver active users" do
     users = User.find_active
     users.should include(@jan)
     users.should include(@thorsten)
+    users.should include(@urs)
   end
-  it "should deliver active users, sorted by login" do
-    User.find_active(:order => 'login ASC').should eql([@thorsten, @jan])
+  it "should deliver active users, sorted by name ascending" do
+    User.find_active(:order => 'name ASC').should eql([@jan, @thorsten, @urs])
   end
-  it "should deliver active users, sorted by name" do
-    User.find_active(:order => 'name ASC').should eql([@jan, @thorsten])
+  it "should deliver active users, sorted by name descending" do
+    User.find_active(:order => 'name DESC').should eql([@urs, @thorsten, @jan])
   end
 end
 # -> wenn ich jetzt eine weitere Bedingung für Aktivität hinzufüge und das mittesten
@@ -43,13 +45,34 @@ class User < ActiveRecord::Base
 end
 
 # huhu, wir müssten drei Tests anpassen, weil wir natürlich diese neue Bedingung mittesten wollen
+describe "Finding active users" do
+  before do
+    @jan      = User.create(:name => 'Jan',       :points => 2)
+    @thorsten = User.create(:name => 'Thorsten',  :points => 1)
+    @urs      = User.create(:name => 'Urs',       :points => 0)
+    @deleted  = User.create(:name => 'Deleted',   :points => 1, :deleted_at => Time.now)
+  end
+  it "should deliver active users" do
+    users = User.find_active
+    users.should include(@jan)
+    users.should include(@thorsten)
+    users.should include(@urs)
+  end
+  it "should deliver active users, sorted by name ascending" do
+    User.find_active(:order => 'name ASC').should eql([@jan, @thorsten, @urs])
+  end
+  it "should deliver active users, sorted by name descending" do
+    User.find_active(:order => 'name DESC').should eql([@urs, @thorsten, @jan])
+  end
+end
+
 # -> besser
 describe "Finding active users" do
   before do
-    @jan      = User.create(:login => 'krutisch', :name => 'Jan',      :points => 1)
-    @thorsten = User.create(:login => 'boettger', :name => 'Thorsten', :points => 2)
-    @dude     = User.create(:login => 'dude',     :name => 'dude',     :deleted_at => Time.now)
-    @lazy     = User.create(:login => 'lazy',     :name => 'lazy',     :points => 0)
+    @jan      = User.create(:name => 'Jan',       :points => 2)
+    @thorsten = User.create(:name => 'Thorsten',  :points => 1)
+    @urs      = User.create(:name => 'Urs',       :points => 0)
+    @deleted  = User.create(:name => 'Deleted',   :points => 1, :deleted_at => Time.now)
   end
   it "should deliver undeleted users" do
     User.find_active.each {|user| user.should_not be_deleted}

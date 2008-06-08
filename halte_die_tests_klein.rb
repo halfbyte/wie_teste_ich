@@ -6,35 +6,34 @@
 # - man weiss nicht, wie sehr kaputt der Test wirklich ist
 
 # so nicht!
-describe "A user's role" do
-  it "should be accessible" do
-    user = User.new(:role => nil)
-    user.should_not be_band
-    user.role = 'user'
-    user.should_not be_band
-    user.role = 'band'
-    user.should be_band
-    user.role = 'admin'
-    user.should_not be_band
+describe "A user's display name" do
+  it "should reflect the user's name" do
+    user = User.new(:login => 'alto')
+    user.display_name.should eql('alto')
+    
+    user.firstname = 'Thorsten'
+    user.display_name.should eql('Thorsten')
+
+    user.lastname = 'Böttger'
+    user.display_name.should eql('Thorsten Böttger')
   end
 end
 
 # eher so
-describe "A user" do
-  it "should be a band if that is his/her role" do
-    user = User.new(:role => 'band')
-    user.should be_band
+describe "A user's display name" do
+  before do
+    @user = User.new(:login => 'alto')
   end
-  it "should not be a band if his/her role is admin" do
-    user = User.new(:role => 'admin')
-    user.should_not be_band
+  it "should equal the login name if no other name is given" do
+    @user.display_name.should eql('alto')
   end
-  it "should not be a band if his/her role is user" do
-    user = User.new(:role => 'user')
-    user.should_not be_band
+  it "should equal his firstname if it is given" do
+    @user.firstname = 'Thorsten'
+    @user.display_name.should eql('Thorsten')
   end
-  it "should not be a band if his/her role is empty" do
-    user = User.new(:role => nil)
-    user.should_not be_band
+  it "should equal his fullname if firstname and lastname are given" do
+    @user.firstname = 'Thorsten'
+    @user.lastname = 'Böttger'
+    @user.display_name.should eql('Thorsten Böttger')
   end
 end

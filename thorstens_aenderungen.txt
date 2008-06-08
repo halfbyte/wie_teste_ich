@@ -1,0 +1,100 @@
+Zu den Folien
+#6  Teste zuerst!
+    zuviel Text, besser:
+    - was soll diese Methode/Klasse eigentlich leisten?
+    - weniger wie
+#8  code
+    die neuen Zeile hervorheben
+#10 Teste immer!
+    besser:
+    - gutes Gefühl
+    - wartbarer (veränderbarer)
+    - Dokumentation (drin lassen?)
+    - besseres Design
+#11 besser:
+    - kostet Zeit (Geld!)
+    - wie teste ich...?
+#12 code
+    Transaktion betonen
+#13 code
+    it-Inhalt betonen
+#14 Teste nie alles!
+    zuviel Text, besser:
+    - alles, aber 'nur' das Entscheidende
+    - 'gut genug'
+#15 code
+    should betonen
+#16 code
+    should_not betonen
+#17 code
+    weiteren should_not betonen
+#18 code
+    valid_emails und invalid_emails betonen (oben, nicht die def!)
+#19 Teste vor jedem Commit!
+    falsches Bild
+#20 Teste automatisiert
+    zuviel Text, besser:
+    - Gatekeeper
+    - näher an Production
+    - Migrationen testen
+#21 Teste nur deinen Code
+    zuviel Text, besser: kein Text?
+#22 code
+    Zeile mit find_by_name betonen
+#23 code
+    die Seite kann glaub ich raus
+#24 Berechne keine Ergebnisse
+    - Don't Repeat Your Errors
+    - lesbarer
+#25 code
+    Addition im Code und im Test betonen (also messages_inbox + messages_sent oben und unten)
+#26 code
+    eql(2002) betonen
+#27 Halte die Tests klein!
+    zu viel Text, besser:
+    - lesbarer
+    - fokussierter
+    - Testfehler verständlicher
+#28 und #29 code
+    komplett überarbeitet
+#32 Bleibe orthogonal!
+    besser:
+    - Cost of Change
+#33 bis #36
+    komplett überarbeitet
+    an die Highlights denken!
+#37 Teste isoliert!
+    - leichter zu debuggen
+    - eleganteres Design
+#38 Teste isoliert!
+    - keine Integration
+    - zu nah an der Implementierung
+#39 code
+    should_receive highlighten
+#41 code
+    stubs und mock betonen
+    unten im it dann die should_receive
+#43 code
+    stub! betonen
+#46 Teste Validierungen
+    viel zu viel Text!
+#48 Teste Assoziationen
+    kann raus, oder?
+#53 Vermeide Fixtures
+    - langsam
+    - invalide Daten möglich
+    - schlecht zu pflegen
+    - fragil
+#59 und #60 code
+    komplett überarbeitet
+    und Highlights nicht vergessen!
+#63 code
+    matches? betonen
+#65 Stories
+    raus? kürzen?
+#76 rcov
+    vielleicht raus?
+#77 heckle
+    vielleicht raus? oder kürzer:
+    - mutiert intelligent den Code
+Am Ende noch Hinweis auf http://testpractices.blogspot.com

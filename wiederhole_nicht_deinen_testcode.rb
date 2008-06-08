@@ -15,15 +15,13 @@ describe 'A logo' do
     @logo = Logo.new
   end
   it "should be valid with a valid content type" do
-    content_types = ['image/gif', 'image/png', 'image/x-png', 'image/jpeg', 'image/pjpeg']
-    content_types.each do |content_type|
+    ['image/gif', 'image/jpeg'].each do |content_type|
       @logo.content_type = content_type
       @logo.should be_valid
     end
   end
   it "should be invalid without a valid content type" do
-    content_types = ['image/bmp','image/tif']
-    content_types.each do |content_type|
+    ['image/bmp','image/tif'].each do |content_type|
       @logo.content_type = content_type
       @logo.should_not be_valid
     end
@@ -34,15 +32,13 @@ end
 # image_spec.rb
 describe "a content type checker" do
   it "should be valid with a valid content type", :shared => true do
-    content_types = ['image/gif', 'image/png', 'image/x-png', 'image/jpeg', 'image/pjpeg']
-    content_types.each do |content_type|
+    ['image/gif', 'image/jpeg'].each do |content_type|
       @image.content_type = content_type
       @image.should be_valid
     end
   end
   it "should be invalid without a valid content type", :shared => true do
-    content_types = ['image/bmp','image/tif']
-    content_types.each do |content_type|
+    ['image/bmp','image/tif'].each do |content_type|
       @image.content_type = content_type
       @image.should_not be_valid
     end
